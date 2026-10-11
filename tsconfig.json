@@ -1,0 +1,17 @@
+{
+  // Solution file for `npm run typecheck` (`tsc -b --force`).
+  //
+  // Only COMPOSITE projects can be referenced here. apps/web sets
+  // `composite: false` and `noEmit: true` because Vite owns its build, so it is
+  // type-checked by its own `npm run build -w @hi/web` step
+  // (`tsc -p tsconfig.json --noEmit && vite build`) rather than from here.
+  //
+  // Added by the platform role so CI has something to run; the technical lead
+  // should adopt this file if the project layout changes.
+  "files": [],
+  "references": [
+    { "path": "packages/contracts" },
+    { "path": "apps/api" },
+    { "path": "apps/worker" }
+  ]
+}

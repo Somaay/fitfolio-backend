@@ -1,0 +1,21 @@
+{
+  "name": "@hi/worker",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/worker.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/worker.ts",
+    "start": "node dist/worker.js"
+  },
+  "dependencies": {
+    "@hi/contracts": "0.1.0",
+    "pg": "8.23.0",
+    "pino": "10.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "@types/pg": "8.15.6",
+    "tsx": "4.23.13"
+  }
+}

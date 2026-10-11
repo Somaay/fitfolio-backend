@@ -1,0 +1,39 @@
+{
+  "name": "health-investment",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "build": "npm run build -w @hi/contracts && npm run build -w @hi/api && npm run build -w @hi/worker && npm run build -w @hi/web",
+    "typecheck": "tsc -b --force",
+    "lint": "eslint .",
+    "dev": "node scripts/dev.mjs",
+    "db:start": "node scripts/pg.mjs start",
+    "db:stop": "node scripts/pg.mjs stop",
+    "db:migrate": "node --experimental-strip-types scripts/migrate.mjs",
+    "db:seed": "npm run -w @hi/api seed",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "node scripts/test-integration.mjs",
+    "test:e2e": "playwright test",
+    "verify": "npm run typecheck && npm run lint && npm run test:unit && npm run test:integration"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.1",
+    "@playwright/test": "1.63.0",
+    "eslint": "9.39.1",
+    "tsx": "4.23.13",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.46.0",
+    "vitest": "4.1.11"
+  },
+  "dependencies": {
+    "pg": "^8.23.0"
+  }
+}

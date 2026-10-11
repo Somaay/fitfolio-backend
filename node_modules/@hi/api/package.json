@@ -1,0 +1,31 @@
+{
+  "name": "@hi/api",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/server.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "seed": "tsx src/seed/seed.ts",
+    "openapi": "tsx src/openapi/emit.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "11.1.2",
+    "@fastify/cors": "11.3.0",
+    "@fastify/helmet": "13.1.1",
+    "@fastify/rate-limit": "11.2.0",
+    "@fastify/static": "^10.1.3",
+    "@hi/contracts": "0.1.0",
+    "fastify": "5.12.4",
+    "jose": "6.2.12",
+    "pg": "8.23.0",
+    "pino": "10.3.1",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "@types/pg": "8.15.6",
+    "tsx": "4.23.13"
+  }
+}
